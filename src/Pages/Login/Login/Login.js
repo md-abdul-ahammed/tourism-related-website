@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const { signInWithGoogle } = useAuth();
@@ -17,7 +18,7 @@ const Login = () => {
     return (
         <div className='my-5 py-5'>
             <div className='container d-flex justify-content-center my-5 pt-5 align-items-center'>
-                <button className='button-design' onClick={handleGoogleLogin}>Login With Google</button>
+                <button className='button-design fs-4' onClick={handleGoogleLogin}><FcGoogle className='fs-2' />Login With Google</button>
             </div>
         </div>
     );

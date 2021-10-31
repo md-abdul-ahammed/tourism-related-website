@@ -11,6 +11,7 @@ import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Pages/Login/Login/PrivateRoute/PrivateRoute';
 import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 import MyOrders from './Pages/MyOrders/MyOrders';
+import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 
@@ -49,6 +50,9 @@ function App() {
           </PrivateRoute>
           <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route exact path='*'>
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>
