@@ -8,7 +8,7 @@ const WhyUs = () => {
     return (
         <div className='bg-img'>
             <div className='my-5'>
-                <h5 className='d-flex justify-content-center align-content-center primary-c-color'>Why TRAVEL GO</h5>
+                <h5 className='d-flex justify-content-center align-content-center primary-c-color fw-bold'>Why TRAVEL GO</h5>
                 <h1 className='d-flex justify-content-center align-content-center'>Why You Are Travel With </h1>
                 <h1 className='d-flex justify-content-center align-content-center'>TRAVEL GO</h1>
             </div>

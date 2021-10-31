@@ -9,7 +9,7 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div className='container'>
+        <div className='container' id='home'>
             <Carousel className='mb-5' fade>
                 <Carousel.Item >
                     <div className="drk">
@@ -20,7 +20,7 @@ const Home = () => {
                         />
                     </div>
                     <Carousel.Caption>
-                        <h3>Amazing Tour In <br /> Indonesia</h3>
+                        <h3 className='fw-bolder'>Amazing Tour In <br /> Indonesia</h3>
                         <p className='primary-c-color fw-bolder'>5 Days, 6 Night Tour</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -33,7 +33,7 @@ const Home = () => {
                         />
                     </div>
                     <Carousel.Caption>
-                        <h3>Amazing Tour In <br /> Madagascar</h3>
+                        <h3 className='fw-bolder'>Amazing Tour In <br /> Madagascar</h3>
                         <p className='primary-c-color fw-bolder'>5 Days, 6 Night Tour</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -46,7 +46,7 @@ const Home = () => {
                         />
                     </div>
                     <Carousel.Caption>
-                        <h3>Amazing Tour In <br /> Hampshire</h3>
+                        <h3 className='fw-bolder'>Amazing Tour In <br /> Hampshire</h3>
                         <p className='primary-c-color fw-bolder'>5 Days, 6 Night Tour</p>
                     </Carousel.Caption>
                 </Carousel.Item>

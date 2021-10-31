@@ -3,12 +3,15 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { BiCalendarStar } from "react-icons/bi";
+import { MdOutlineAddLocationAlt, MdAdd } from "react-icons/md";
+import { AiTwotoneStar } from "react-icons/ai";
 import './Services.css';
 
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -16,7 +19,7 @@ const Services = () => {
     return (
         <div className='container mb-5' id='services'>
             <div className='mb-5'>
-                <h5 className='d-flex justify-content-center primary-c-color'>Choose Your Package</h5>
+                <h5 className='d-flex justify-content-center primary-c-color fw-bold'>Choose Your Package</h5>
                 <h1 className='d-flex justify-content-center'>Select Your Best Package</h1>
                 <h1 className='d-flex justify-content-center'>For Your Travel</h1>
             </div>
@@ -32,25 +35,25 @@ const Services = () => {
                         {
                             services.map(service =>
                                 <Col key={service._id}>
-                                    <Card className='h-100 hover-effect'>
+                                    <Card className='h-100 hover-effect bg-dark  hover-bg-white'>
                                         <div className='zoom'>
                                             <Card.Img variant="top" src={service.img} />
                                         </div>
-                                        <Card.Body className='text-dark'>
+                                        <Card.Body >
                                             <Card.Title className='d-flex justify-content-between align-items-center'>
-                                                <h5>${service.price}/Per Person</h5>
-                                                <h6>{service.days} Days/{service.night} night</h6>
+                                                <h5><span className='fs-3 fw-bolder'>${service.price}</span>/Per Person</h5>
+                                                <h6><BiCalendarStar className='fs-3' /> {service.days} Days/{service.night} night</h6>
                                             </Card.Title>
-                                            <Card.Title className='fw-bold primary-c-color'>{service.name}</Card.Title>
+                                            <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> {service.name}</Card.Title>
                                             <Card.Text>
                                                 {service.description}
                                             </Card.Text>
                                         </Card.Body>
-                                        <Card.Footer className='d-flex justify-content-between align-items-center text-dark'>
+                                        <Card.Footer className='d-flex justify-content-between align-items-center'>
                                             <div>
-                                                <Link className='button-design' to={`/booking/${service._id}`}>Book Now</Link>
+                                                <Link className='button-design d-flex align-items-center justify-content-between' to={`/booking/${service._id}`}>Book Now <MdAdd className='fs-5' /> </Link>
                                             </div>
-                                            <p className='mb-0'>{service.rating}</p>
+                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
                                         </Card.Footer>
                                     </Card>
                                 </Col>
@@ -58,7 +61,7 @@ const Services = () => {
                         }
                     </Row>
             }
-        </div>
+        </div >
     );
 };
 

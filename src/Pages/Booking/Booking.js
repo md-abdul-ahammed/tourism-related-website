@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import './Booking.css';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
+import { AiTwotoneStar } from "react-icons/ai";
 
 const Booking = () => {
     const [service, setService] = useState({})
@@ -13,7 +14,7 @@ const Booking = () => {
         data.login_user = user.email;
         data.service = service;
         data.status = "pending";
-        fetch('http://localhost:5000/order', {
+        fetch('https://dark-phantom-03023.herokuapp.com/order', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -25,7 +26,7 @@ const Booking = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://dark-phantom-03023.herokuapp.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [serviceId])
@@ -37,17 +38,23 @@ const Booking = () => {
                     <div>
                         <img className='cropped rounded-3' src={service.img} alt="" />
                     </div>
+                    <div className='text-center'>
+                        <h3 className='mt-5 fw-bold primary-c-color'>{service.name}</h3>
+                        <p>{service.description}</p>
+                        <h4>Price: <span className='fs-2 primary-c-color'>${service.price}</span></h4>
+                        <h5 className='mb-0'><AiTwotoneStar className='fs-3 primary-c-color' /> {service.rating}</h5>
+                    </div>
                 </div>
-                <div className='col-md-4 p-4 rounded-3 shadow'>
-                    <h4 className='py-3'>Book This Package</h4>
+                <div className='col-md-4 px-4 pt-5 c-shadow'>
+                    <h4 className='py-3 fw-bold primary-c-color'>Book This Package</h4>
                     <form className='d-flex flex-column align-content-center justify-content-center' onSubmit={handleSubmit(onSubmit)}>
-                        <input placeholder='Your Full Name' className='mb-3 py-2 border-1 rounded px-2' defaultValue={user.displayName} {...register("name", { required: true })} />
+                        <input placeholder='Your Full Name' className='mb-3 outline-a py-2 border-1 rounded px-2' defaultValue={user.displayName} {...register("name", { required: true })} />
                         {errors.name && <span className='text-danger error-customize mb-2'>This name field is required</span>}
 
-                        <input placeholder='Your Email' className='mb-3 py-2 border-1 rounded px-2' defaultValue={user.email} {...register("email", { required: true })} />
+                        <input placeholder='Your Email' className='mb-3 outline-a py-2 border-1 rounded px-2' defaultValue={user.email} {...register("email", { required: true })} />
                         {errors.email && <span className='text-danger error-customize mb-2'>This email field is required</span>}
 
-                        <input type='number' placeholder='Phone' className='mb-3 py-2 border-1 rounded px-2' {...register("phone", { required: true })} />
+                        <input type='number' placeholder='Phone' className='mb-3 outline-a py-2 border-1 rounded px-2' {...register("phone", { required: true })} />
                         {errors.phone && <span className='text-danger error-customize mb-2'>This phone field is required</span>}
 
                         <select className='mb-3 py-2 border-1 rounded px-2' {...register("ticket", { required: true })}>
@@ -57,11 +64,11 @@ const Booking = () => {
                         </select>
                         {errors.ticket && <span className='text-danger error-customize mb-2'>This Ticket Type field is required</span>}
 
-                        <input type='date' className='mb-3 py-2 border-1 rounded px-2' {...register("date", { required: true })} />
+                        <input type='date' className='mb-3 outline-a py-2 border-1 rounded px-2' {...register("date", { required: true })} />
                         {errors.date && <span className='text-danger error-customize mb-2'>Must be added your destination data</span>}
-                        <textarea placeholder='Your Message' className='mb-3 py-2 border-1 rounded px-2' {...register("message", { required: true })} />
+                        <textarea placeholder='Your Message' className='mb-3 outline-a py-2 border-1 rounded px-2' {...register("message", { required: true })} />
                         {errors.message && <span className='text-danger error-customize mb-2'>You have to write something</span>}
-                        <input className='mb-3 py-2 border-1 rounded px-2' type="submit" />
+                        <input className='mb-3 py-2 border-1 button-design rounded px-2' type="submit" />
                     </form>
                 </div>
             </div>

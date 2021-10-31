@@ -1,0 +1,4 @@
+.outline-a:focus{
+   outline: 1px solid #ff00cc;
+   box-shadow: 0px 0px 5px #ff00cc;
+}

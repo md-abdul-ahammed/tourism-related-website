@@ -11,7 +11,7 @@ const Header = () => {
         <div className='mb-custom'>
             <Navbar fixed="top" expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">
+                    <Navbar.Brand as={HashLink} to="/home#home">
                         <img
                             width='139px'
                             height='45px'
@@ -22,7 +22,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="ms-auto">
-                            <Nav.Link className='me-3' as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link className='me-3' as={HashLink} to="/home#home">Home</Nav.Link>
                             <Nav.Link className='me-3' as={HashLink} to="/home#services">Services</Nav.Link>
                             <Nav.Link className='me-3' as={HashLink} to="/home#blogs">Blog</Nav.Link>
                             <Nav.Link className='me-3' as={Link} to="/contactUs">Contact Us</Nav.Link>

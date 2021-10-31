@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardGroup } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const [isDeleted, setIsDeleted] = useState(null)
     const { user } = useAuth();
-    const email = user?.email
+    const email = user.email;
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`https://dark-phantom-03023.herokuapp.com/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [orders, isDeleted])
+    }, [isDeleted, email])
 
     const handleDelete = (id) => {
-        const confirm = window.confirm("Are you the boss?")
+        const confirm = window.confirm("Are you Sure For Delete?")
         if (confirm) {
-            fetch(`http://localhost:5000/deleteBooking/${id}`, {
+            fetch(`https://dark-phantom-03023.herokuapp.com/deleteBooking/${id}`, {
                 method: "DELETE",
                 headers: {
                     "content-type": "application/json"
@@ -35,28 +34,38 @@ const MyOrders = () => {
     }
 
     return (
-        <div className='container'>
-            <CardGroup>
-                {
-                    orders.length === 0 ? <h1>You don't have any Order</h1>
-                        :
-                        orders.map(order =>
-                            <Card key={order._id}>
-                                <Card.Img variant="top" src={order.service.img} />
-                                <Card.Body>
-                                    <Card.Title>Card title</Card.Title>
-                                    <Card.Text>
-                                        This is a wider card with supporting text below as a natural lead-in to
-                                        additional content. This content is a little bit longer.
-                                    </Card.Text>
-                                </Card.Body>
-                                <Card.Footer>
-                                    <button onClick={() => handleDelete(order._id)}>Cancel Booking</button>
-                                </Card.Footer>
-                            </Card>
-                        )
-                }
-            </CardGroup>
+        <div className='container my-5 py-5 d-flex justify-content-center align-items-center'>
+            {
+                orders.length === 0 ? "You Don't Have Ordered Any Product" :
+                    <table className="table">
+                        <thead>
+                            <tr className='text-white'>
+                                <th scope="col">Image</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Remove Item</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                orders.map(order =>
+                                    <tr key={order._id}>
+                                        <th scope="row">
+                                            <img
+                                                width='120px'
+                                                height='50px'
+                                                src={order.service.img}
+                                                alt="" />
+                                        </th>
+                                        <td className='primary-c-color fs-2'>${order.service.name}</td>
+                                        <td className='primary-c-color fs-2'>${order.service.price}</td>
+                                        <td><button onClick={() => handleDelete(order._id)} className='button-design'>Delete</button></td>
+                                    </tr>
+                                )
+                            }
+                        </tbody>
+                    </table>
+            }
         </div>
     );
 };

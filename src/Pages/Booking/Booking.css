@@ -2,12 +2,14 @@
     width: 100%; /* width of container */
     height: 400px;
     overflow: hidden;
-    border: 5px solid white;
-    box-shadow: 0px 0px 4px grey;
+    box-shadow: 0px 0px 3px 3px #333399;
 }
 .cropped img {
     margin: -10px 0px 0px -180px;
 }
 .error-customize{
     margin-top: -16px;
+}
+.c-shadow{
+    box-shadow: 0px 0px 2px 2px #ff00cc;
 }
