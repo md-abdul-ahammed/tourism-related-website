@@ -54,7 +54,7 @@ const ManageAllOrders = () => {
                                         </th>
                                         <td className='primary-c-color fs-2'>${order.service.name}</td>
                                         <td className='primary-c-color fs-2'>${order.service.price}</td>
-                                        <td><button onClick={() => handleDelete(order._id)} className='button-design fs-5'>Delete</button></td>
+                                        <td className='px-0'><button onClick={() => handleDelete(order._id)} className='button-design fs-6'>Delete</button></td>
                                     </tr>
                                 )
                             }
