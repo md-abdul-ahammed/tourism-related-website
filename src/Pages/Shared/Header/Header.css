@@ -1,0 +1,44 @@
+/* CSS */
+.button-design {
+  background-image: linear-gradient(#ff00cc , #333399);
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.mb-custom{
+    margin-bottom:  71px;
+}
+.mt-custom{
+    margin-top:  5rem;
+}
+
+.button-design:hover {
+  color: #fff;
+  box-shadow: 0px 0px 5px grey;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* Custom responsive Start here */
+
+@media only screen and (max-width: 411px) {
+    .carousel-indicators{
+        margin: 0;
+    }
+    .carousel-caption{
+        padding: 0;
+    }
+    .carousel-caption p{
+        padding: 0;
+    }
+}

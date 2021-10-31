@@ -1,0 +1,17 @@
+/* this css for zoom effect */
+.zoom img:hover{
+    transform: scale(1.1);
+    transition: all ease 500ms;
+    
+  }
+  .zoom{
+    overflow: hidden;
+  }
+  /* primary color */
+  .primary-c-color{
+    color: #ff00cc;
+  }
+/* hover effect */
+  .hover-effect:hover{
+    box-shadow: 0px 0px 3px 3px #333399;
+  }

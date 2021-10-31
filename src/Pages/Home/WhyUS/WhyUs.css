@@ -1,0 +1,15 @@
+.icon-size{
+    font-size: 5rem;
+}
+.bg-img{
+    background-image: url("../../../images/why_us_bg_img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.b-radius{
+    border-radius: 2rem;
+}
+.hover-bg-white:hover{
+    background-color: white !important;
+    color: black !important;
+}

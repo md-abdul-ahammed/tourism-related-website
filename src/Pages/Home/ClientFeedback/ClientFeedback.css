@@ -1,0 +1,8 @@
+.img-rounded{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.custom-rounded{
+    border-radius: 45px 5px 45px 5px;
+}
