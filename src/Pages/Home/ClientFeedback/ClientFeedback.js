@@ -2,8 +2,13 @@ import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import './ClientFeedback.css';
 import { GiCommercialAirplane } from "react-icons/gi";
+import Slider from 'react-slick';
 
 const ClientFeedback = () => {
+
+
+
+
     return (
         <div className='mt-5'>
             <div className='my-5'>
@@ -12,9 +17,16 @@ const ClientFeedback = () => {
                 <h1 className='d-flex justify-content-center align-content-center'>About Us</h1>
             </div>
 
-            <Row xs={1} md={3} className="g-4 container-md container-lg mx-auto">
+            <Slider
+                slidesToShow={3}
+                speed={1300}
+                dots
+                dotsClass="slick-dots line-indicator"
+                customPaging={(i) => <div style={{ position: "absolute", width: "100%", top: '-7px', opacity: "0" }}>{i}</div>}
+                autoplay
+            >
                 <Col>
-                    <Card className='text-center py-5 custom-rounded bg-dark h-100 hover-effect hover-bg-white'>
+                    <Card className='text-center py-5 m-3 custom-rounded bg-dark h-100 hover-effect hover-bg-white'>
                         <div className='d-flex justify-content-center '>
                             <Card.Img className='img-rounded' variant="top" src="https://i.ibb.co/fNfnqVT/reviewer-2-52e03342.png" />
                         </div>
@@ -28,7 +40,21 @@ const ClientFeedback = () => {
                     </Card>
                 </Col>
                 <Col>
-                    <Card className='text-center py-5 bg-dark h-100 hover-effect  hover-bg-white custom-rounded'>
+                    <Card className='text-center py-5 bg-dark m-3 h-100 hover-effect  hover-bg-white custom-rounded'>
+                        <div className='d-flex justify-content-center'>
+                            <Card.Img className='img-rounded' variant="top" src="https://i.ibb.co/rGGdB58/reviewer-3-21d99f5c.png" />
+                        </div>
+                        <Card.Body>
+                            <Card.Title className='fw-bold fs-4 primary-c-color'>Rakib Talukder</Card.Title>
+                            <Card.Title className='fw-bold fs-6 text-muted'><GiCommercialAirplane /> Traveller</Card.Title>
+                            <Card.Text className='fw-bolder'>
+                                “I am not the same, having seen the moon shine on the other side of the world”.Best service I ever seen.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card className='text-center py-5 m-3 bg-dark h-100 hover-effect  hover-bg-white custom-rounded'>
                         <div className='d-flex justify-content-center'>
                             <Card.Img className='img-rounded' variant="top" src="https://i.ibb.co/9TF5cpQ/reviewer-1-07859027.png" />
                         </div>
@@ -42,7 +68,7 @@ const ClientFeedback = () => {
                     </Card>
                 </Col>
                 <Col>
-                    <Card className='text-center py-5 bg-dark h-100 hover-effect  hover-bg-white custom-rounded'>
+                    <Card className='text-center py-5 bg-dark m-3 h-100 hover-effect  hover-bg-white custom-rounded'>
                         <div className='d-flex justify-content-center'>
                             <Card.Img className='img-rounded' variant="top" src="https://i.ibb.co/rGGdB58/reviewer-3-21d99f5c.png" />
                         </div>
@@ -55,7 +81,8 @@ const ClientFeedback = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-            </Row>
+
+            </Slider>
         </div>
     );
 };

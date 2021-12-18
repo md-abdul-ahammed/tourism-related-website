@@ -1,7 +1,7 @@
 /* this css for zoom effect */
 .zoom img:hover{
     transform: scale(1.1);
-    transition: all ease 500ms;
+    transition: all ease 800ms;
     
   }
   .zoom{

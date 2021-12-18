@@ -2,7 +2,11 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import Blog from '../Blog/Blog';
 import ClientFeedback from '../ClientFeedback/ClientFeedback';
+import CountriesPackages from '../CountriesPackages/CountriesPackages/CountriesPackages';
+import FeaturePakage from '../FeaturePakage/FeaturePakage';
+import NewsLetter from '../NewsLetter/NewsLetter';
 import Services from '../Services/Services';
+import SpecialOffer from '../SpecialOffer/SpecialOffer';
 import WhyUs from '../WhyUS/WhyUs';
 import './Home.css';
 
@@ -51,10 +55,14 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            <SpecialOffer></SpecialOffer>
             <Services></Services>
+            <CountriesPackages></CountriesPackages>
             <WhyUs></WhyUs>
             <ClientFeedback></ClientFeedback>
+            <FeaturePakage></FeaturePakage>
             <Blog></Blog>
+            <NewsLetter></NewsLetter>
         </div>
     );
 };

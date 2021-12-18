@@ -6,3 +6,28 @@
 .custom-rounded{
     border-radius: 45px 5px 45px 5px;
 }
+
+.line-indicator{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    bottom: -40px !important;
+}
+.line-indicator li{
+    /* border: 2px solid white; */
+    height: 10px !important;
+    width: 25px !important;
+    border-radius: 5px;
+    background: rgb(202, 200, 200);
+    margin-left: 0.8rem !important;
+    margin-right: 0.8rem !important;
+    
+    
+}
+.line-indicator li:hover{
+    background: gray;
+}
+.line-indicator li.slick-active{
+    background: #ff00cc;
+    height: 15px !important
+}

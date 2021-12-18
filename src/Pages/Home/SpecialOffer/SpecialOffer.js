@@ -6,18 +6,16 @@ import { Link } from 'react-router-dom';
 import { BiCalendarStar } from "react-icons/bi";
 import { MdOutlineAddLocationAlt, MdAdd } from "react-icons/md";
 import { AiTwotoneStar } from "react-icons/ai";
-import './Services.css';
 
-const Services = () => {
-    const [services, setServices] = useState([]);
+const SpecialOffer = () => {
+    const [services, setServices] = useState([])
     useEffect(() => {
         fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
-            .then(data => setServices(data))
-    }, []);
-
+            .then(data => setServices(data.slice(0, 3)));
+    }, [])
     return (
-        <div className='container mb-5' id='services'>
+        <div className='container mb-5'>
             <div className='mb-5'>
                 <h5 className='d-flex justify-content-center primary-c-color fw-bold'>Choose Your Package</h5>
                 <h1 className='d-flex justify-content-center'>Select Your Best Package</h1>
@@ -65,4 +63,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default SpecialOffer;

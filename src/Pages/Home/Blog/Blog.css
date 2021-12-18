@@ -1,0 +1,16 @@
+.p-relative{
+    position: relative;
+}
+.p-absolute{
+position: absolute;
+width: 100%;
+top: 0;
+display: flex;
+justify-content: center;
+}
+.p-absolute h6{
+    font-size: 1rem;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px 16px;
+    margin-top: -1px;
+}
