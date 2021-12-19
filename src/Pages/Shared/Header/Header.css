@@ -17,7 +17,7 @@
   touch-action: manipulation;
 }
 .mb-custom{
-    margin-bottom:  71px;
+    margin-bottom:  83px;
 }
 .mt-custom{
     margin-top:  5rem;
@@ -32,7 +32,22 @@
 
 /* Custom responsive Start here */
 
-@media only screen and (max-width: 411px) {
+@media only screen and (max-width: 480px) {
+    .carousel-caption h3,p{
+        margin-bottom: 0;
+    }
+    .mb-5 {
+        margin-bottom: 2rem!important;
+    }
+    .spain-cover-img img{
+        width: 100%;
+        height: 90px;
+        object-fit: cover;
+        object-position: 0 77%;
+    }
+    .spain-cover-img {
+        margin-bottom: 1rem;
+    }
     .carousel-indicators{
         margin: 0;
     }
@@ -42,5 +57,100 @@
     .carousel-caption p{
         padding: 0;
     }
+    .icon-size {
+        font-size: 3rem;
+    }
+    .why-us-container .py-5 {
+        padding-top: 1rem!important;
+        padding-bottom: 1rem!important;
+    }
+    .why-us-container h5 {
+        font-size: .8rem;
+    }
+    .left-right-icon {
+        top: 32%;
+    }
+    .left-right-icon>.me-3 {
+        margin-right: 6rem!important;
+    }
+    .feature-img img{
+        height: 120px !important;
+        width: 120px !important;
+    }
+    .featured-data{
+        padding-left: 1rem;
+    }
+    .featured-data>.card-title {
+        font-size: 1.2rem !important;
+    }
+    .featured-data>p {
+        margin-bottom: 0.2rem;
+        margin-top: 0.2rem;
+    }
+    .featured-data>h4 {
+        font-size: 1rem !important;
+    }
+    .featured-data>h4>span{
+        font-size: 1.1rem;
+    }
+    .nl-shadow{
+        margin: 0 0 2rem 0 !important;
+        text-align: center;
+        padding: 1rem!important;
+    }
+    .nl-shadow>.nl-title>h1{
+        font-size: 1.2rem !important;
+    }
+    .w-50{
+        width: 100% !important;
+    }
     
 }
+@media (min-width: 481px) and (max-width: 991px) {
+    .spain-cover-img img{
+        width: 100%;
+        height: 186px;
+        object-fit: cover;
+        object-position: 0 66%;
+    }
+    .spain-cover-img {
+        margin-bottom: 2rem;
+    }
+    .left-right-icon {
+        top: 42%;
+    }
+    .left-right-icon>.me-3 {
+        margin-right: 10rem!important;
+    }
+    .feature-img img{
+        height: 120px !important;
+        width: 120px !important;
+    }
+    .featured-data{
+        padding-left: 1rem;
+    }
+    .featured-data>.card-title {
+        font-size: 1.2rem !important;
+    }
+    .featured-data>p {
+        margin-bottom: 0.2rem;
+        margin-top: 0.2rem;
+    }
+    .featured-data>h4 {
+        font-size: 1rem !important;
+    }
+    .featured-data>h4>span{
+        font-size: 1.1rem;
+    }
+    .nl-shadow{
+        margin: 0 0 3rem 0 !important;
+        text-align: center;
+        padding: 2rem!important;
+    }
+    .nl-shadow>.nl-title>h1{
+        font-size: 1.5rem !important;
+    }
+    .w-50{
+        width: 100% !important;
+    }
+  }

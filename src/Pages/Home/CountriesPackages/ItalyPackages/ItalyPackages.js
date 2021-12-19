@@ -14,6 +14,27 @@ import { AiTwotoneStar } from "react-icons/ai";
 const ItalyPackages = () => {
     const [services, setServices] = useState([]);
     const sliderRef = useRef(null);
+
+    const carouselProperties = {
+        slidesToShow: 3,
+        speed: 1300,
+        ref: sliderRef,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 1279,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
+    }
+
     useEffect(() => {
         fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
@@ -22,11 +43,9 @@ const ItalyPackages = () => {
     return (
         <div className='mt-3'>
             <div className="row">
-                <div className="col-md-9 col-sm-12">
+                <div className="col-lg-9 col-md-12 col-sm-12 order-lg-1 order-md-2 order-2">
                     <Slider
-                        slidesToShow={3}
-                        speed={1300}
-                        ref={sliderRef}
+                        {...carouselProperties}
                     >
                         {
                             services.map(service =>
@@ -58,7 +77,7 @@ const ItalyPackages = () => {
                         }
                     </Slider>
                 </div>
-                <div className="col-md-3 col-sm-12">
+                <div className="col-lg-3 col-md-12 order-lg-2 order-md-1 order-1 col-sm-12">
                     <div className='spain-cover-img'>
                         <img className='img-fluid' src="https://i.imgur.com/94HHU6A.png" alt="" />
                         <div class="pakage-overlay fs-2 text-white"><strong>Italy</strong></div>

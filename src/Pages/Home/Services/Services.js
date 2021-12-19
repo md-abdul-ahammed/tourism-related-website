@@ -31,7 +31,7 @@ const Services = () => {
                         <Spinner className='fs-2 p-5' animation="border" variant="primary" />
                     </div>
                     :
-                    <Row xs={1} md={3} className="g-4">
+                    <Row xs={1} md={2} lg={3} className="g-4">
                         {
                             services.map(service =>
                                 <Col key={service._id}>

@@ -14,6 +14,27 @@ import { AiTwotoneStar } from "react-icons/ai";
 const DubaiPackages = () => {
     const [services, setServices] = useState([]);
     const sliderRef = useRef(null);
+
+    const carouselProperties = {
+        slidesToShow: 3,
+        speed: 1300,
+        ref: sliderRef,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 1279,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
+    }
+
     useEffect(() => {
         fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
@@ -22,7 +43,7 @@ const DubaiPackages = () => {
     return (
         <div className='mt-3'>
             <div className="row">
-                <div className="col-md-3 col-sm-12">
+                <div className="col-md-12 col-lg-3 col-sm-12">
                     <div className='spain-cover-img'>
                         <img className='img-fluid' src="https://i.imgur.com/6akg45t.png" alt="" />
                         <div class="pakage-overlay fs-2 text-white"><strong>Dubai</strong></div>
@@ -33,11 +54,9 @@ const DubaiPackages = () => {
                     </div>
                 </div>
 
-                <div className="col-md-9 col-sm-12">
+                <div className="col-md-12 col-lg-9 col-sm-12">
                     <Slider
-                        slidesToShow={3}
-                        speed={1300}
-                        ref={sliderRef}
+                        {...carouselProperties}
                     >
                         {
                             services.map(service =>

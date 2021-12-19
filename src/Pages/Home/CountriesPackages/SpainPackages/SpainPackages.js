@@ -15,6 +15,27 @@ import './SpainPackages.css';
 const SpainPackages = () => {
     const [services, setServices] = useState([]);
     const sliderRef = useRef(null);
+
+    const carouselProperties = {
+        slidesToShow: 3,
+        speed: 1300,
+        ref: sliderRef,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 1279,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
+    }
+
     useEffect(() => {
         fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
@@ -23,7 +44,7 @@ const SpainPackages = () => {
     return (
         <div>
             <div className="row">
-                <div className="col-md-3 col-sm-12">
+                <div className="col-md-12 col-lg-3 col-sm-12">
                     <div className='spain-cover-img'>
                         <img className='img-fluid' src="https://i.imgur.com/4W0dMwW.png" alt="" />
                         <div class="pakage-overlay fs-2 text-white"><strong>Spain</strong></div>
@@ -34,11 +55,9 @@ const SpainPackages = () => {
                     </div>
                 </div>
 
-                <div className="col-md-9 col-sm-12">
+                <div className="col-md-12 col-lg-9 col-sm-12">
                     <Slider
-                        slidesToShow={3}
-                        speed={1300}
-                        ref={sliderRef}
+                        {...carouselProperties}
                     >
                         {
                             services.map(service =>

@@ -12,7 +12,7 @@ const Blog = () => {
         <div className='mb-5 container' id='blogs'>
             <div className='my-5'>
                 <h5 className='d-flex justify-content-center align-content-center primary-c-color fw-bold'>Latest Blog</h5>
-                <h1 className='d-flex justify-content-center align-content-center'>Stay Updated And New Post</h1>
+                <h1 className='d-flex justify-content-center text-center align-content-center'>Stay Updated And New Post</h1>
                 <h1 className='d-flex justify-content-center align-content-center'>Our Blog</h1>
             </div>
             <Row xs={1} md={3} className="g-4">

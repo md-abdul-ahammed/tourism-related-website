@@ -7,6 +7,23 @@ import Slider from 'react-slick';
 const ClientFeedback = () => {
 
 
+    const carouselProperties = {
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 1279,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
+    }
 
 
     return (
@@ -18,7 +35,7 @@ const ClientFeedback = () => {
             </div>
 
             <Slider
-                slidesToShow={3}
+                {...carouselProperties}
                 speed={1300}
                 dots
                 dotsClass="slick-dots line-indicator"
