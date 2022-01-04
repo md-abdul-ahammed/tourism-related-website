@@ -4,14 +4,14 @@ const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const [isDeleted, setIsDeleted] = useState(null)
     useEffect(() => {
-        fetch("https://dark-phantom-03023.herokuapp.com/manageAllOrders")
+        fetch("https://thawing-eyrie-67434.herokuapp.com/manageAllOrders")
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [isDeleted]);
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you Sure For Remove This Item?")
         if (confirm) {
-            fetch(`https://dark-phantom-03023.herokuapp.com/deleteBooking/${id}`, {
+            fetch(`https://thawing-eyrie-67434.herokuapp.com/deleteBooking/${id}`, {
                 method: "DELETE",
                 headers: {
                     "content-type": "application/json"

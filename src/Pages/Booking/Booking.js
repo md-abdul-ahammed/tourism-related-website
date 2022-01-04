@@ -14,7 +14,7 @@ const Booking = () => {
         data.login_user = user.email;
         data.service = service;
         data.status = "pending";
-        fetch('https://dark-phantom-03023.herokuapp.com/order', {
+        fetch('https://thawing-eyrie-67434.herokuapp.com/order', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -26,7 +26,7 @@ const Booking = () => {
     }
 
     useEffect(() => {
-        fetch(`https://dark-phantom-03023.herokuapp.com/services/${serviceId}`)
+        fetch(`https://thawing-eyrie-67434.herokuapp.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [serviceId])

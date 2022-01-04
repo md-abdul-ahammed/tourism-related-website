@@ -10,7 +10,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 const SpecialOffer = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('https://dark-phantom-03023.herokuapp.com/services')
+        fetch('https://thawing-eyrie-67434.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data.filter(specialOffer => specialOffer.special_price !== "undefined")));
     }, []);

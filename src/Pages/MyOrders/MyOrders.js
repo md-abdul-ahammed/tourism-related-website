@@ -7,7 +7,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const email = user.email;
     useEffect(() => {
-        fetch(`https://dark-phantom-03023.herokuapp.com/myOrders/${email}`)
+        fetch(`https://thawing-eyrie-67434.herokuapp.com/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [isDeleted, email])
@@ -15,7 +15,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you Sure For Delete?")
         if (confirm) {
-            fetch(`https://dark-phantom-03023.herokuapp.com/deleteBooking/${id}`, {
+            fetch(`https://thawing-eyrie-67434.herokuapp.com/deleteBooking/${id}`, {
                 method: "DELETE",
                 headers: {
                     "content-type": "application/json"
