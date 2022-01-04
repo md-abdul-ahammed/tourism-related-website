@@ -13,7 +13,7 @@ const Services = () => {
     useEffect(() => {
         fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => setServices(data.filter(service => service.special_price === 'undefined')))
     }, []);
 
     return (
@@ -37,7 +37,7 @@ const Services = () => {
                                 <Col key={service._id}>
                                     <Card className='h-100 hover-effect bg-dark  hover-bg-white'>
                                         <div className='zoom'>
-                                            <Card.Img variant="top" src={service.img} />
+                                            <Card.Img variant="top" src={`data:image/png;base64,${service.image}`} />
                                         </div>
                                         <Card.Body >
                                             <Card.Title className='d-flex justify-content-between align-items-center'>
@@ -45,15 +45,12 @@ const Services = () => {
                                                 <h6><BiCalendarStar className='fs-3' /> {service.days} Days/{service.night} night</h6>
                                             </Card.Title>
                                             <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> {service.name}</Card.Title>
-                                            <Card.Text>
-                                                {service.description}
-                                            </Card.Text>
                                         </Card.Body>
                                         <Card.Footer className='d-flex justify-content-between align-items-center'>
                                             <div>
                                                 <Link className='button-design d-flex align-items-center justify-content-between' to={`/booking/${service._id}`}>Book Now <MdAdd className='fs-5' /> </Link>
                                             </div>
-                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
+                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> 8K+ Rating</p>
                                         </Card.Footer>
                                     </Card>
                                 </Col>

@@ -9,8 +9,8 @@ const NewsLetter = () => {
                 <h1 className='d-flex justify-content-center fw-bold'>Subscribe To Our Newsletter</h1>
                 <h1 className='d-flex justify-content-center fw-bold'>For Latest Update</h1>
             </div>
-            <div class="input-group w-50 mx-auto ">
-                <input type="text" class="form-control" placeholder="Enter Your Email" />
+            <div className="input-group w-50 mx-auto ">
+                <input type="text" className="form-control" placeholder="Enter Your Email" />
                 <button className='button-design d-flex align-items-center justify-content-between'>Subscribe</button>
             </div>
         </div>

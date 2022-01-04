@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import './ClientFeedback.css';
 import { GiCommercialAirplane } from "react-icons/gi";
 import Slider from 'react-slick';

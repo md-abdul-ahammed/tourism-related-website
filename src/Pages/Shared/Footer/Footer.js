@@ -5,7 +5,6 @@ import skrillImg from '../../../images/skrill.png';
 import stripeImg from '../../../images/stripe.png';
 import discoverImg from '../../../images/discover.png';
 import { BiPhoneCall, BiMessageRoundedAdd, BiLocationPlus } from "react-icons/bi";
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {

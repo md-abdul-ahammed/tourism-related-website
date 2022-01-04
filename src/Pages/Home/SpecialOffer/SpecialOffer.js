@@ -12,14 +12,15 @@ const SpecialOffer = () => {
     useEffect(() => {
         fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
-            .then(data => setServices(data.slice(0, 3)));
-    }, [])
+            .then(data => setServices(data.filter(specialOffer => specialOffer.special_price !== "undefined")));
+    }, []);
+
     return (
         <div className='container mb-5'>
             <div className='mb-5'>
-                <h5 className='d-flex justify-content-center primary-c-color fw-bold'>Choose Your Package</h5>
-                <h1 className='d-flex justify-content-center'>Select Your Best Package</h1>
-                <h1 className='d-flex justify-content-center'>For Your Travel</h1>
+                <h5 className='d-flex justify-content-center primary-c-color fw-bold'>Special offer</h5>
+                <h1 className='d-flex justify-content-center'>Our Most Popular And</h1>
+                <h1 className='d-flex justify-content-center'>Best Adventures</h1>
             </div>
 
             {
@@ -35,23 +36,24 @@ const SpecialOffer = () => {
                                 <Col key={service._id}>
                                     <Card className='h-100 hover-effect bg-dark  hover-bg-white'>
                                         <div className='zoom'>
-                                            <Card.Img variant="top" src={service.img} />
+                                            <Link to={`/booking/${service._id}`} ><Card.Img variant="top" src={`data:image/png;base64,${service.image}`} /></Link>
                                         </div>
                                         <Card.Body >
                                             <Card.Title className='d-flex justify-content-between align-items-center'>
-                                                <h5><span className='fs-3 fw-bolder'>${service.price}</span>/Per Person</h5>
                                                 <h6><BiCalendarStar className='fs-3' /> {service.days} Days/{service.night} night</h6>
+                                                <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
                                             </Card.Title>
-                                            <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> {service.name}</Card.Title>
-                                            <Card.Text>
-                                                {service.description}
-                                            </Card.Text>
+                                            <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> <Link className='fw-bold text-decoration-none primary-c-color' to={`/booking/${service._id}`}>{service.name}</Link></Card.Title>
+
                                         </Card.Body>
                                         <Card.Footer className='d-flex justify-content-between align-items-center'>
                                             <div>
-                                                <Link className='button-design d-flex align-items-center justify-content-between' to={`/booking/${service._id}`}>Book Now <MdAdd className='fs-5' /> </Link>
+                                                <h4><span className='fs-3 fw-bolder me-3'>${service.special_price}</span><del>${service.price}</del></h4>
+
+                                                {/* <Link className='button-design d-flex align-items-center justify-content-between' to={`/booking/${service._id}`}>Book Now <MdAdd className='fs-5' /> </Link> */}
                                             </div>
-                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
+
+
                                         </Card.Footer>
                                     </Card>
                                 </Col>

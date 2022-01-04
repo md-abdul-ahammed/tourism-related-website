@@ -39,7 +39,7 @@ const SpainPackages = () => {
     useEffect(() => {
         fetch('https://dark-phantom-03023.herokuapp.com/services')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => setServices(data.filter(service => service.country.toLowerCase() === 'spain')))
     }, []);
     return (
         <div>
@@ -47,7 +47,7 @@ const SpainPackages = () => {
                 <div className="col-md-12 col-lg-3 col-sm-12">
                     <div className='spain-cover-img'>
                         <img className='img-fluid' src="https://i.imgur.com/4W0dMwW.png" alt="" />
-                        <div class="pakage-overlay fs-2 text-white"><strong>Spain</strong></div>
+                        <div className="pakage-overlay fs-2 text-white"><strong>Spain</strong></div>
                         <div className='left-right-icon'>
                             <BsChevronDoubleLeft onClick={() => sliderRef.current.slickPrev()} className='me-3 slider-left-right-icon fw-bold fs-3 text-white' />
                             <BsChevronDoubleRight onClick={() => sliderRef.current.slickNext()} className='ms-3 slider-left-right-icon fw-bold fs-3 text-white' />
@@ -64,24 +64,21 @@ const SpainPackages = () => {
                                 <Col key={service._id}>
                                     <Card className='h-100 hover-effect bg-dark mx-2 hover-bg-white'>
                                         <div className='zoom'>
-                                            <Card.Img variant="top" src={service.img} />
+                                            <Link to={`/booking/${service._id}`} ><Card.Img variant="top" src={`data:image/png;base64,${service.image}`} /></Link>
                                         </div>
                                         <Card.Body >
                                             <Card.Title className='d-flex justify-content-between align-items-center'>
-                                                <h5><span className='fs-3 fw-bolder'>${service.price}</span>/Per Person</h5>
-                                                <h6><BiCalendarStar className='fs-3' /> {service.days} Days/{service.night} night</h6>
+                                                <h5><span className='fs-4 fw-bolder'>${service.price}</span>/Per Person</h5>
+                                                <h6><BiCalendarStar className='fs-4' /> {service.days} Days/{service.night} night</h6>
                                             </Card.Title>
-                                            <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> {service.name}</Card.Title>
-                                            <Card.Text>
-                                                {service.description.slice(0, 90)}
-                                            </Card.Text>
+                                            <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-3 text-muted' /> <Link className='fw-bold text-decoration-none primary-c-color' to={`/booking/${service._id}`}>{service.name}</Link></Card.Title>
                                         </Card.Body>
                                         {/* <Card.Footer className='d-flex justify-content-between align-items-center'> */}
                                         <Card.Footer >
                                             <div>
                                                 {/* <Link className='button-design d-flex align-items-center justify-content-between' to={`/booking/${service._id}`}>Book Now <MdAdd className='fs-5' /> </Link> */}
                                             </div>
-                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
+                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> 1.3K+ Rating</p>
                                         </Card.Footer>
                                     </Card>
                                 </Col>
