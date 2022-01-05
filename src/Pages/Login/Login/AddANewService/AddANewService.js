@@ -70,6 +70,9 @@ const AddANewService = () => {
 
     return (
         <div className="container py-5">
+            <div>
+                <h1 className='fw-bold primary-c-color text-center mb-4'>Add a new service</h1>
+            </div>
             <form className='row gy-4 container ' onSubmit={handleSubmit(onSubmit)}>
                 <div className='col-md-6'>
                     <label >Service Name</label>
@@ -156,6 +159,7 @@ const AddANewService = () => {
                     <input accept='image/*' onChange={e => setImage(e.target.files[0])} type='file' id='file' className='outline-a border-1 w-75 mx-auto d-block rounded p-2 d-none '
                     />
                     <div className='text-center'><label style={{ border: '1px solid white' }} htmlFor='file' className='text-center px-2 py-1' > <AiOutlineCloudUpload className='fs-3' /> {image ? image?.name : 'Upload Service Photo'}</label></div>
+                    <p className='text-center text-warning mt-2'>(<span className='fw-bold'>N.B:</span> It takes a long time for pictures to come from the "mongodb", so for the time being I am adding the system but keeping it off.)</p>
                 </div>
                 <input className='mb-3 button-design py-2 border-1 rounded w-25 mx-auto px-2' type="submit" />
             </form>

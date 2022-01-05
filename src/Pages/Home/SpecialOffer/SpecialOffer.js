@@ -36,7 +36,7 @@ const SpecialOffer = () => {
                                 <Col key={service._id}>
                                     <Card className='h-100 hover-effect bg-dark  hover-bg-white'>
                                         <div className='zoom'>
-                                            <Link to={`/booking/${service._id}`} ><Card.Img variant="top" src={`data:image/png;base64,${service.image}`} /></Link>
+                                            <Link to={`/booking/${service._id}`} ><Card.Img variant="top" src={service.image} /></Link>
                                         </div>
                                         <Card.Body >
                                             <Card.Title className='d-flex justify-content-between align-items-center'>

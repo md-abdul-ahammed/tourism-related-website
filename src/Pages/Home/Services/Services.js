@@ -37,7 +37,7 @@ const Services = () => {
                                 <Col key={service._id}>
                                     <Card className='h-100 hover-effect bg-dark  hover-bg-white'>
                                         <div className='zoom'>
-                                            <Card.Img variant="top" src={`data:image/png;base64,${service.image}`} />
+                                            <Card.Img variant="top" src={service.image} />
                                         </div>
                                         <Card.Body >
                                             <Card.Title className='d-flex justify-content-between align-items-center'>
