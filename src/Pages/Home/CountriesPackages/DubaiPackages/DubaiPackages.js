@@ -60,7 +60,7 @@ const DubaiPackages = () => {
                     >
                         {
                             services.map(service =>
-                                <Col key={service._id}>
+                                <Col className='my-2' key={service._id}>
                                     <Card className='h-100 hover-effect bg-dark mx-2 hover-bg-white'>
                                         <div className='zoom'>
                                             <Link to={`/booking/${service._id}`} ><Card.Img variant="top" src={service.image} /></Link>
@@ -77,7 +77,7 @@ const DubaiPackages = () => {
                                             <div>
                                                 {/* <Link className='button-design d-flex align-items-center justify-content-between' to={`/booking/${service._id}`}>Book Now <MdAdd className='fs-5' /> </Link> */}
                                             </div>
-                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
+                                            <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /> 1.2K+ Rating</p>
                                         </Card.Footer>
                                     </Card>
                                 </Col>

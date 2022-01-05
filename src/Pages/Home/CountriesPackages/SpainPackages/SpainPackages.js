@@ -61,7 +61,7 @@ const SpainPackages = () => {
                     >
                         {
                             services.map(service =>
-                                <Col key={service._id}>
+                                <Col className='my-2' key={service._id}>
                                     <Card className='h-100 hover-effect bg-dark mx-2 hover-bg-white'>
                                         <div className='zoom'>
                                             <Link to={`/booking/${service._id}`} ><Card.Img variant="top" src={service.image} /></Link>
