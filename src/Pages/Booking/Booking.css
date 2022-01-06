@@ -2,7 +2,7 @@
     width: 100%; /* width of container */
     height: 400px;
     overflow: hidden;
-    box-shadow: 0px 0px 3px 3px #333399;
+    box-shadow: 0px 0px 3px 3px #ff00cc;
 }
 .cropped img {
     margin: -10px 0px 0px -180px;
@@ -13,3 +13,87 @@
 .c-shadow{
     box-shadow: 0px 0px 2px 2px #ff00cc;
 }
+.n-mt-3{
+
+    background: linear-gradient(rgba(0,0,0,.65) 100%,rgba(0,0,0,.65) 0),url('https://i.ibb.co/7vwhzVS/breadcrumb-bg-9cc4efda-1.png');
+    margin-top: -12px;
+    height: 320px;
+}
+.cfs-7{
+    font-size: 13px;
+}
+
+
+
+
+
+  
+  .bloc-tabs {
+    display: flex;
+  }
+  .tabs {
+    padding: 15px;
+    text-align: center;
+    width: 50%;
+    background: #212529;
+    cursor: pointer;
+    color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+  }
+  .tabs:not(:last-child){
+    border-right: 1px solid rgba(0, 0, 0, 0.274);
+  }
+  
+  .active-tabs  {
+    border-bottom: 1px solid transparent;
+    color: #ff00cc;
+    transition: 0.6s;
+  }
+  
+  .active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+    background: #ff00cc;
+    transition: 0.6s;
+  }
+  
+  
+  
+  button {
+    border: none;
+    
+  }
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    padding: 10px 5px;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+  .content p {
+    width: 100%;
+    height: 100%;
+  }
+  .active-content {
+    display: block;
+  }
