@@ -3,6 +3,11 @@ import React from 'react';
 import DubaiPackages from '../DubaiPackages/DubaiPackages';
 import ItalyPackages from '../ItalyPackages/ItalyPackages';
 import SpainPackages from '../SpainPackages/SpainPackages';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+AOS.init();
 
 const CountriesPackages = () => {
 
@@ -14,9 +19,15 @@ const CountriesPackages = () => {
                 <h1 className='d-flex justify-content-center align-content-center'>For Your Travel</h1>
             </div>
 
-            <SpainPackages></SpainPackages>
-            <ItalyPackages></ItalyPackages>
-            <DubaiPackages></DubaiPackages>
+            <div data-aos="fade-right" data-aos-duration="2000">
+                <SpainPackages></SpainPackages>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="2000">
+                <ItalyPackages></ItalyPackages>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="2000">
+                <DubaiPackages></DubaiPackages>
+            </div>
         </div>
     );
 };

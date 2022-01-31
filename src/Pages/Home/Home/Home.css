@@ -17,3 +17,9 @@
   transform: translate(0, -5px) !important;
   transition: 600ms;
 }
+.banner-border-radius{
+  border-radius: 45px;
+}
+.cpt-5{
+  padding-top: 5rem;
+}

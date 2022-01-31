@@ -11,7 +11,7 @@ const AddANewService = () => {
     const [isSpecial, setIsSpecial] = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-
+    console.log(options)
 
     const handleSpecialChange = (e) => {
         setIsSpecial(e.target.value)

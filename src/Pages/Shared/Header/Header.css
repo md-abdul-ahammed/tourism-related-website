@@ -17,7 +17,7 @@
   touch-action: manipulation;
 }
 .mb-custom{
-    margin-bottom:  83px;
+    margin-bottom:  95px;
 }
 .mt-custom{
     margin-top:  5rem;
@@ -28,6 +28,9 @@
   box-shadow: 0px 0px 5px grey;
   transform: scale(1.05) rotate(0deg);
   transition: 500ms;
+}
+.navbar-nav{
+    text-align: center;
 }
 
 /* Custom responsive Start here */

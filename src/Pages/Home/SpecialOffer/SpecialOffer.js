@@ -4,8 +4,14 @@ import { useState } from 'react';
 import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BiCalendarStar } from "react-icons/bi";
-import { MdOutlineAddLocationAlt, MdAdd } from "react-icons/md";
+import { MdOutlineAddLocationAlt } from "react-icons/md";
 import { AiTwotoneStar } from "react-icons/ai";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+AOS.init();
+
 
 const SpecialOffer = () => {
     const [services, setServices] = useState([])
@@ -16,7 +22,7 @@ const SpecialOffer = () => {
     }, []);
 
     return (
-        <div className='container mb-5'>
+        <div className='container'>
             <div className='mb-5'>
                 <h5 className='d-flex justify-content-center primary-c-color fw-bold'>Special offer</h5>
                 <h1 className='d-flex justify-content-center'>Our Most Popular And</h1>
@@ -30,7 +36,8 @@ const SpecialOffer = () => {
                         <Spinner className='fs-2 p-5' animation="border" variant="primary" />
                     </div>
                     :
-                    <Row xs={1} md={2} lg={3} className="g-4">
+                    <Row data-aos-duration="2000"
+                        data-aos="fade-right" xs={1} md={2} lg={3} className="g-4">
                         {
                             services.map(service =>
                                 <Col key={service._id}>

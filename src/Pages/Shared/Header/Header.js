@@ -8,7 +8,7 @@ import './Header.css'
 const Header = () => {
     const { user, logout } = useAuth();
     return (
-        <div className='mb-custom'>
+        <div className=''>
             <Navbar fixed="top" expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={HashLink} to="/home#home">
