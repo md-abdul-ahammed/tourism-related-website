@@ -9,10 +9,7 @@ import 'aos/dist/aos.css';
 
 AOS.init();
 
-
 const ClientFeedback = () => {
-
-
     const carouselProperties = {
         slidesToShow: 3,
         responsive: [
@@ -40,9 +37,10 @@ const ClientFeedback = () => {
                 <h1 className='d-flex justify-content-center align-content-center'>About Us</h1>
             </div>
 
-
-            <div data-aos="fade-left"
-                data-aos-duration="1500">
+            <div
+                data-aos-duration="1500"
+                data-aos="zoom-in-down"
+                className='mx-3'>
                 <Slider
                     {...carouselProperties}
                     speed={1300}

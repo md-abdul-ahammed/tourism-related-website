@@ -18,15 +18,23 @@ const CountriesPackages = () => {
                 <h1 className='d-flex justify-content-center align-content-center'>Select Your Best Package</h1>
                 <h1 className='d-flex justify-content-center align-content-center'>For Your Travel</h1>
             </div>
-
-            <div data-aos="fade-right" data-aos-duration="2000">
-                <SpainPackages></SpainPackages>
-            </div>
-            <div data-aos="fade-left" data-aos-duration="2000">
-                <ItalyPackages></ItalyPackages>
-            </div>
-            <div data-aos="fade-right" data-aos-duration="2000">
-                <DubaiPackages></DubaiPackages>
+            <div className='mx-1'>
+                <div
+                    data-aos-duration="1500"
+                    data-aos="zoom-in-left"
+                >
+                    <SpainPackages></SpainPackages>
+                </div>
+                <div
+                    data-aos-duration="1500"
+                    data-aos="zoom-in-right">
+                    <ItalyPackages></ItalyPackages>
+                </div>
+                <div
+                    data-aos-duration="1500"
+                    data-aos="zoom-in-left">
+                    <DubaiPackages></DubaiPackages>
+                </div>
             </div>
         </div>
     );
