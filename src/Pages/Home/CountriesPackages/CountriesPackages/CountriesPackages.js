@@ -12,13 +12,13 @@ AOS.init();
 const CountriesPackages = () => {
 
     return (
-        <div className='container'>
+        <div>
             <div className='my-5'>
                 <h5 className='d-flex justify-content-center align-content-center primary-c-color fw-bold'>Choose Your Package</h5>
                 <h1 className='d-flex justify-content-center align-content-center'>Select Your Best Package</h1>
                 <h1 className='d-flex justify-content-center align-content-center'>For Your Travel</h1>
             </div>
-            <div className='mx-1'>
+            <div className='mx-5'>
                 <div
                     data-aos-duration="1500"
                     data-aos="zoom-in-left"
