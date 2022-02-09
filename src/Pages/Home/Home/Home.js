@@ -17,13 +17,12 @@ AOS.init();
 
 
 const Home = () => {
+
     return (
         <div className='container' id='home'>
             <div className='cpt-5'>
                 <Carousel
-                    data-aos-duration="1500"
-                    data-aos="zoom-in-up"
-                    className='my-5' fade>
+                    className='my-5'>
                     <Carousel.Item >
                         <div className="drk">
                             <img
@@ -72,7 +71,10 @@ const Home = () => {
                 <ClientFeedback></ClientFeedback>
                 <FeaturePakage></FeaturePakage>
                 <Blog></Blog>
-                <div data-aos-duration="1500" data-aos="zoom-in-down">
+                <div
+                    data-aos-duration="2500"
+                    data-aos="fade-up"
+                >
                     <NewsLetter></NewsLetter>
                 </div>
             </div>

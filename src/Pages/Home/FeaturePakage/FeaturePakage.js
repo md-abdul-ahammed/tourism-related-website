@@ -41,8 +41,8 @@ const FeaturePakage = () => {
                 <h1 className='d-flex justify-content-center align-content-center'>Destinations</h1>
             </div>
             <div
-                data-aos-duration="1500"
-                data-aos="zoom-up"
+                data-aos-duration="2500"
+                data-aos="fade-up"
                 className='mx-3'>
                 <Slider
                     {...carouselProperties}

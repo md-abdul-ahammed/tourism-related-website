@@ -22,9 +22,9 @@ const Blog = () => {
                     <h1 className='d-flex justify-content-center text-center align-content-center'>Stay Updated And New Post</h1>
                     <h1 className='d-flex justify-content-center align-content-center'>Our Blog</h1>
                 </div>
-                <Row data-aos="flip-left"
-                    data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000" xs={1} md={3} className="g-4">
+                <Row
+                    data-aos-duration="2500"
+                    data-aos="fade-up" xs={1} md={3} className="g-4">
                     <Col>
                         <Card className='bg-dark h-100 hover-effect p-relative hover-bg-white'>
                             <div className='zoom'>

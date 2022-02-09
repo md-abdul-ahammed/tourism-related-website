@@ -20,19 +20,19 @@ const CountriesPackages = () => {
             </div>
             <div className='mx-5'>
                 <div
-                    data-aos-duration="1500"
-                    data-aos="zoom-in-left"
+                    data-aos-duration="2500"
+                    data-aos="fade-up"
                 >
                     <SpainPackages></SpainPackages>
                 </div>
                 <div
-                    data-aos-duration="1500"
-                    data-aos="zoom-in-right">
+                    data-aos-duration="2500"
+                    data-aos="fade-up">
                     <ItalyPackages></ItalyPackages>
                 </div>
                 <div
-                    data-aos-duration="1500"
-                    data-aos="zoom-in-left">
+                    data-aos-duration="2500"
+                    data-aos="fade-up">
                     <DubaiPackages></DubaiPackages>
                 </div>
             </div>

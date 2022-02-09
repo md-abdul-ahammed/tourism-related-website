@@ -12,5 +12,8 @@
 .hover-bg-white:hover{
     background-color: white !important;
     color: black !important;
-    transition: 500ms;
+    transition: 700ms;
+}
+.hover-bg-white{
+    transition: 1000ms;
 }

@@ -13,7 +13,7 @@ const Services = () => {
     useEffect(() => {
         fetch('https://thawing-eyrie-67434.herokuapp.com/services')
             .then(res => res.json())
-            .then(data => setServices(data.filter(service => service.special_price === 'undefined')))
+            .then(data => setServices(data))
     }, []);
 
     return (
@@ -32,7 +32,10 @@ const Services = () => {
                             <Spinner className='fs-2 p-5' animation="border" variant="primary" />
                         </div>
                         :
-                        <Row data-aos="zoom-in" data-aos-duration="1500" xs={1} md={2} lg={3} className="g-4">
+                        <Row
+                            data-aos-duration="2500"
+                            data-aos="fade-up"
+                            xs={1} md={2} lg={3} className="g-4">
                             {
                                 services.map(service =>
                                     <Col key={service._id}>
@@ -41,11 +44,17 @@ const Services = () => {
                                                 <Card.Img variant="top" src={service.image} />
                                             </div>
                                             <Card.Body >
-                                                <Card.Title className='d-flex justify-content-between align-items-center'>
+                                                <Card.Title
+                                                    data-aos-duration="1500"
+                                                    data-aos="fade-up"
+                                                    className='d-flex justify-content-between align-items-center'>
                                                     <h5><span className='fs-3 fw-bolder'>${service.price}</span>/Per Person</h5>
                                                     <h6><BiCalendarStar className='fs-3' /> {service.days} Days/{service.night} night</h6>
                                                 </Card.Title>
-                                                <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> {service.name}</Card.Title>
+                                                <Card.Title
+                                                    data-aos-duration="1500"
+                                                    data-aos="fade-up"
+                                                    className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> {service.name}</Card.Title>
                                             </Card.Body>
                                             <Card.Footer className='d-flex justify-content-between align-items-center'>
                                                 <div>

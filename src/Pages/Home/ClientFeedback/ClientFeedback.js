@@ -38,8 +38,8 @@ const ClientFeedback = () => {
             </div>
 
             <div
-                data-aos-duration="1500"
-                data-aos="zoom-in-down"
+                data-aos-duration="2500"
+                data-aos="fade-up"
                 className='mx-3'>
                 <Slider
                     {...carouselProperties}

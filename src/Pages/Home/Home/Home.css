@@ -17,9 +17,19 @@
   transform: translate(0, -5px) !important;
   transition: 600ms;
 }
+.card{
+  transition: 900ms;
+}
 .banner-border-radius{
   border-radius: 45px;
 }
 .cpt-5{
   padding-top: 5rem;
+}
+.not{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 100vh;
 }

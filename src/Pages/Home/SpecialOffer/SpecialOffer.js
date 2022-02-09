@@ -36,8 +36,10 @@ const SpecialOffer = () => {
                         <Spinner className='fs-2 p-5' animation="border" variant="primary" />
                     </div>
                     :
-                    <Row data-aos-duration="2000"
-                        data-aos="fade-right" xs={1} md={2} lg={3} className="g-4">
+                    <Row
+                        data-aos-duration="2500"
+                        data-aos="fade-up"
+                        xs={1} md={2} lg={3} className="g-4">
                         {
                             services.map(service =>
                                 <Col key={service._id}>
@@ -47,10 +49,19 @@ const SpecialOffer = () => {
                                         </div>
                                         <Card.Body >
                                             <Card.Title className='d-flex justify-content-between align-items-center'>
-                                                <h6><BiCalendarStar className='fs-3' /> {service.days} Days/{service.night} night</h6>
-                                                <p className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
+                                                <h6
+                                                    data-aos-duration="1500"
+                                                    data-aos="fade-up"
+                                                ><BiCalendarStar className='fs-3' /> {service.days} Days/{service.night} night</h6>
+                                                <p
+                                                    data-aos-duration="1500"
+                                                    data-aos="fade-up"
+                                                    className='mb-0'><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /><AiTwotoneStar className='fs-5 primary-c-color' /> {service.rating}</p>
                                             </Card.Title>
-                                            <Card.Title className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> <Link className='fw-bold text-decoration-none primary-c-color' to={`/booking/${service._id}`}>{service.name}</Link></Card.Title>
+                                            <Card.Title
+                                                data-aos-duration="1500"
+                                                data-aos="fade-up"
+                                                className='fw-bold primary-c-color'><MdOutlineAddLocationAlt className='fs-2 text-muted' /> <Link className='fw-bold text-decoration-none primary-c-color' to={`/booking/${service._id}`}>{service.name}</Link></Card.Title>
 
                                         </Card.Body>
                                         <Card.Footer className='d-flex justify-content-between align-items-center'>
