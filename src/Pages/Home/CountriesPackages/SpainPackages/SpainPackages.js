@@ -37,9 +37,9 @@ const SpainPackages = () => {
     }
 
     useEffect(() => {
-        fetch('https://thawing-eyrie-67434.herokuapp.com/services')
+        fetch('https://thawing-eyrie-67434.herokuapp.com/SpainPackages')
             .then(res => res.json())
-            .then(data => setServices(data.filter(service => service.country.toLowerCase() === 'spain')))
+            .then(data => setServices(data))
     }, []);
     return (
         <div>

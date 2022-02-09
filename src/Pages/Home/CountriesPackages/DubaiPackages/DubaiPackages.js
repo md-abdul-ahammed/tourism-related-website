@@ -36,9 +36,9 @@ const DubaiPackages = () => {
     }
 
     useEffect(() => {
-        fetch('https://thawing-eyrie-67434.herokuapp.com/services')
+        fetch('https://thawing-eyrie-67434.herokuapp.com/DubaiPackages')
             .then(res => res.json())
-            .then(data => setServices(data.filter(service => service.country.toLowerCase() === 'united arab emirates')))
+            .then(data => setServices(data))
     }, []);
     return (
         <div className='mt-3'>
